@@ -1,0 +1,16 @@
+#Official documentation - https://alacritty.org/config-alacritty.html
+
+import = ["~/.config/alacritty/themes/themes/catppuccin_frappe.toml"]
+
+[shell]
+program = "/bin/zsh"
+args = []
+
+[window]
+dimensions = { columns = 70, lines = 20}
+decorations = "full" #"Full" | "None" | "Transparent" | "Buttonless"
+
+
+
+
+
