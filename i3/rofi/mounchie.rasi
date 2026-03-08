@@ -1,0 +1,169 @@
+/* =============================================================================
+ * Rofi Theme: Mounchie Style
+ * Layout:     Centered spotlight — vertical list, inline icons
+ * Usage:      rofi -show drun -theme ~/.config/rofi/mounchie.rasi
+ * ============================================================================= */
+
+* {
+    /* --- Palette --- */
+    bg:         #404552;
+    bg-sel:     #383a50;
+    bg-input:   #2E323B;
+    border-col: #383a50;
+    fg:         #c8cae0;
+    fg-dim:     #606278;
+    fg-sel:     #e8eaff;
+
+    /* --- Resets --- */
+    background-color:   transparent;
+    text-color:         @fg;
+    font:               "Sans 11";
+    cursor:             default;
+}
+
+
+/* =============================================================================
+ * WINDOW
+ * ============================================================================= */
+window {
+    width:              340px;
+    location:           center;
+    anchor:             center;
+    background-color:   @bg;
+    border:             0px;
+    border-radius:      10px;
+    padding:            0px;
+}
+
+/* =============================================================================
+ * MAIN LAYOUT
+ * ============================================================================= */
+mainbox {
+    background-color:   transparent;
+    children:           [ inputbar, listview ];
+    spacing:            0px;
+    padding:            0px;
+}
+
+/* =============================================================================
+ * INPUTBAR
+ * ============================================================================= */
+inputbar {
+    background-color:   @bg-input;
+    border-radius:      10px 10px 0px 0px;
+    border:             0px 0px 1px 0px solid;
+    border-color:       @border-col;
+    padding:            10px 14px;
+    spacing:            8px;
+    children:           [  entry ];
+}
+
+
+
+entry {
+    background-color:   transparent;
+    text-color:         @fg;
+    placeholder:        "Search…";
+    placeholder-color:  @fg-dim;
+    cursor:             text;
+    vertical-align:     0.5;
+}
+
+/* =============================================================================
+ * LISTVIEW
+ * ============================================================================= */
+listview {
+    background-color:   transparent;
+    layout:             vertical;
+    columns:            1;
+    lines:              10;
+    cycle:              true;
+    dynamic:            true;
+    scrollbar:          false;
+    spacing:            0px;
+    padding:            4px 0px;
+    fixed-height:       false;
+}
+
+/* =============================================================================
+ * ELEMENT
+ * ============================================================================= */
+element {
+    background-color:   transparent;
+    text-color:         @fg;
+    border-radius:      6px;
+    padding:            7px 12px;
+    spacing:            10px;
+    orientation:        horizontal;
+    cursor:             pointer;
+}
+
+element normal.normal {
+    background-color:   transparent;
+    text-color:         @fg;
+}
+
+element normal.urgent {
+    background-color:   transparent;
+    text-color:         @fg-dim;
+}
+
+element normal.active {
+    background-color:   transparent;
+    text-color:         @fg;
+}
+
+element selected.normal {
+    background-color:   @bg-sel;
+    text-color:         @fg-sel;
+}
+
+element selected.urgent {
+    background-color:   @bg-sel;
+    text-color:         @fg-dim;
+}
+
+element selected.active {
+    background-color:   @bg-sel;
+    text-color:         @fg-sel;
+}
+
+element alternate.normal {
+    background-color:   transparent;
+    text-color:         @fg;
+}
+
+/* =============================================================================
+ * ICON & TEXT
+ * ============================================================================= */
+element-icon {
+    background-color:   transparent;
+    size:               20px;
+    vertical-align:     0.5;
+    cursor:             inherit;
+}
+
+element-text {
+    background-color:   transparent;
+    text-color:         inherit;
+    vertical-align:     0.5;
+    highlight:          bold #e8eaff;
+    cursor:             inherit;
+}
+
+/* =============================================================================
+ * MESSAGE
+ * ============================================================================= */
+message {
+    background-color:   @bg-input;
+    border-radius:      6px;
+    padding:            8px 12px;
+    margin:             4px;
+}
+
+textbox {
+    background-color:   transparent;
+    text-color:         @fg-dim;
+    vertical-align:     0.5;
+    horizontal-align:   0.0;
+}
